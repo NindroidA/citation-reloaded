@@ -103,35 +103,35 @@ export class Citation {
         // background
         rect(0, 0, this.width, this.height, this.moaBg, this.ctx);
 
-        // Logo
+        // logo
         this.ctx.drawImage(tint(this.logo, this.moaFg), (this.width / 2) - ((this.logo.height * this.logoScale) / 2) - 1, this.height - (this.bottomSeparatorSpacingFromBottom + ((this.logo.height * this.logoScale) / 2)) + 4, this.logo.width * this.logoScale, this.logo.height * this.logoScale);
 
-        // Top and bottom dots
+        // top and bottom dots
         dottedLine(0, this.topBottomDotSize / 2, this.width, this.topBottomDotSize / 2, this.moaFg, [this.topBottomDotSize, this.topBottomDotSize], this.ctx, this.topBottomDotSize);
         dottedLine(this.topBottomDotSize, this.height - this.topBottomDotSize / 2, this.width, this.height - this.topBottomDotSize / 2, this.moaFg, [this.topBottomDotSize, this.topBottomDotSize], this.ctx, this.topBottomDotSize);
 
-        // Dots on the sides
+        // dots on the sides
         dottedLine(this.sideDotsSpacingFromLeft + (this.sideDotSize / 2), this.sideDotsSpacingFromTop, this.sideDotsSpacingFromLeft + (this.sideDotSize / 2), this.height - this.topBottomDotSize, this.moaFg, [this.sideDotSize, this.sideDotSize * 2], this.ctx, this.sideDotSize);
         dottedLine(this.width - this.sideDotsSpacingFromRight - (this.sideDotSize / 2), this.sideDotsSpacingFromTop, this.width - this.sideDotsSpacingFromRight - (this.sideDotSize / 2), this.height - this.topBottomDotSize, this.moaFg, [this.sideDotSize, this.sideDotSize * 2], this.ctx, this.sideDotSize);
 
-        // Separators
+        // separators
         dottedLine(this.separatorSpacingFromLeft, this.topSeparatorSpacingFromTop + (this.separatorDotSize / 2), this.width - this.separatorSpacingFromRight, this.topSeparatorSpacingFromTop + (this.separatorDotSize / 2), this.moaFt, [this.separatorDotSize, this.separatorDotSize], this.ctx, this.separatorDotSize);
         dottedLine(this.separatorSpacingFromLeft, this.height - (this.bottomSeparatorSpacingFromBottom + (this.separatorDotSize / 2)), this.width - this.separatorSpacingFromRight, this.height - (this.bottomSeparatorSpacingFromBottom + (this.separatorDotSize / 2)), this.moaFt, [this.separatorDotSize, this.separatorDotSize], this.ctx, this.separatorDotSize);
 
-        // Line at the side
+        // line at the side
         line(this.width - (this.topBottomDotSize / 2), 0, this.width - (this.topBottomDotSize / 2), this.height, this.moaFg, this.ctx, this.topBottomDotSize);
 
-        // Barcode
+        // barcode
         barcode(this.width - this.barcodeSpacingFromRight - (this.barcode.length * this.barcodeWidth), this.barcodeSpacingFromTop, this.barcode, this.barcodeHeight, this.barcodeWidth, this.moaFt, this.moaBg, this.ctx);
         rect(this.width - this.barcodeSpacingFromRight - (this.barcode.length * this.barcodeWidth) - (this.barcodeWidth * 3), this.barcodeSpacingFromTop, this.barcodeWidth * 2, this.barcodeHeight / 2, this.moaFt, this.ctx);
 
-        // Title
+        // title
         text(this.title, this.textSpacingFromLeft, this.titleSpacingFromTop, this.getFont, this.moaFt, this.ctx, 'left', this.titleMaxWidth);
 
-        // Reason
+        // reason
         textWrapped(this.reason, this.textSpacingFromLeft, this.reasonSpacingFromTop, this.getFont, this.moaFt, this.ctx, this.reasonMaxWidth, this.reasonMaxHeight)
 
-        // Penalty
+        // penalty
         text(this.penalty, (this.width / 2) - 3, this.height - this.penaltySpacingFromBottom, this.getFont, this.moaFt, this.ctx, 'center', this.reasonMaxWidth);
     }
 
@@ -161,9 +161,9 @@ export class Citation {
         let animation: number[] = yPos ?? [];
     
         if (!yPos) {
-            let framesPerSegment = 12; // Adjust for desired speed
-            let pauseFrames = 1; // Pause at each stop
-            let finalPauseFrames = 60; // Longer pause at the end
+            let framesPerSegment = 12; // speed
+            let pauseFrames = 1; // short pause
+            let finalPauseFrames = 60; // long pause
     
             let startingPoint = this.sideDotsSpacingFromTop;
             let stopOne = this.topSeparatorSpacingFromTop;
