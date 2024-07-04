@@ -1,0 +1,23 @@
+{
+  "name": "citation-reloaded",
+  "main": "print.ts",
+  "version": "1.0.0",
+  "scripts": {
+    "print": "npm run copy && node dist/print.js",
+    "copy": "tsc && copyfiles -u 1 src/assets/**/* dist/src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "NindroidA",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.53",
+    "@types/node": "^20.14.9",
+    "gif-encoder-2": "^1.0.5"
+  }
+}
